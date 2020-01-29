@@ -38,5 +38,5 @@ bower_components
 psd
 thumb
 sketch
-
+.history/*
 # End of https://www.gitignore.io/api/go,react
