@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+body {
+  font-family: 'Acme', sans-serif;
+  font-size: 2em;
+  /* font-family: 'Bangers', cursive; */
+  font-weight: 300;
+}
+
+.heading {
+  font-weight: 700;
+}
+
+.subheading {
+  font-weight: 300;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -32,6 +47,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

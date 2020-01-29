@@ -1,24 +1,21 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
-const things = ['sdffsd', 'dfssfd']
+
 function App() {
+  const [joke,setJoke] = useState('')
+  useEffect (()=>{
+    (async ()=>{
+    const jokeTextResponse = await fetch('http://127.0.0.1:3000/joke')
+    const jokeText = await jokeTextResponse.text();
+    console.log(jokeText)
+    setJoke(jokeText)
+    })()
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      {joke&&<p style={{"wordWrap": "break-word", width: "500px"}}>{joke}</p>}
     </div>
   )
 }
